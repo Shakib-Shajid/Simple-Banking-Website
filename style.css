@@ -1,0 +1,39 @@
+body{
+    padding: 100px;
+}
+
+.first-part{
+    margin-top: 100px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px gray;
+    padding: 40px;
+}
+.row{
+    margin-bottom: 100px;
+}
+.status{
+    margin: 0 20px;
+    padding: 20px;
+    color: white;
+    border-radius: 10px;
+}
+
+.bg-1{
+    background-color: slateblue;
+}
+.bg-2{
+    background-color: lightsalmon
+}
+.bg-3{
+    background-color: orange;
+}
+
+.submit-area{
+    padding: 40px;
+    margin: 0 20px;
+    box-shadow: 5px 5px 10px gray;
+}
+
+#transaction-area{
+    display: none;
+}   
