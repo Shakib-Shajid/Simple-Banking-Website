@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section id="first">
+        <div class="container">
+                <div class="first-part">
+                    <h1 class="text-center">Welcome to your saving bank</h1>
+                    <br>
+                    <p> Username: <input type="text" class="form-control" name="" id="" placeholder="Enter your username"></p>
+                    <p> Password: <input type="password" class="form-control" name="" id="" placeholder="Enter your password"></p>
+                    <button id = "login" class="button">Enter</button>
+                </div>
+        </div>
+    </section>
+<!-- Login Part End -->
+    <div class="container">
+    <section id="second">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="state bg-1">
+                    <h3>Deposit</h3>
+                    <h5>$ <span id="depositNumber"> 00</span></h5>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="state bg-2">
+                    <h3>Withdraw</h3>
+                    <h5>$ <span id="withdrawNumber"> 00</span></h5>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="state bg-3">
+                    <h3>Balance</h3>
+                    <h5>$ <span id="balanceNumber"> 1250</span></h5>
+                </div>
+            </div>
+        </div>
+    
+    <!-- Show Part End -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="status">
+                    <h3>Deposit</h3>
+                    <input type="text" id="depositAmount" class="form-control" placeholder="Enter Amount"><br>
+                    <button id="depositBtn" class="button">Enter</button>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="status">
+                    <h3>Withdraw</h3>
+                    <input type="text" id = "withdrawAmount" class="form-control" placeholder="Enter Amount"><br>
+                    <button id="withdrawBtn" class="button">Enter</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</div>
+<!-- Input Part Close -->
+
+
+<!-- Coding Part Start -->
+
+
+    <script>
+        //First Login start
+        const login=document.getElementById("login");
+        login.addEventListener("click",function(){
+            const first=document.getElementById("first");
+            first.style.display="none";
+            const second=document.getElementById("second");
+            second.style.display="block";
+        })
+
+
+        //First Login Complete
+
+        //Deposit and Balance Add Start
+
+
+        const depositBtn=document.getElementById("depositBtn");
+        depositBtn.addEventListener("click",function(){
+            const depositAmount=document.getElementById("depositAmount").value;
+            const depositAmountNumber=parseFloat(depositAmount);
+
+            const depositNumber=document.getElementById("depositNumber").innerText;
+            const pastDeposit= parseFloat(depositNumber);
+            const totalDepositAmount= pastDeposit + depositAmountNumber;
+
+            document.getElementById("depositNumber").innerText=totalDepositAmount;
+            document.getElementById("depositAmount").value="";
+
+
+            const balanceNumber=document.getElementById("balanceNumber").innerText;
+            const balanceNumberConvert=parseFloat(balanceNumber);
+
+            const totalBalance= balanceNumberConvert + depositAmountNumber;
+            document.getElementById("balanceNumber").innerText=totalBalance;
+        })
+
+        //Deposit and Balance Add End
+
+        
+        //Withdraw Add Start
+
+
+        const withdrawBtn=document.getElementById("withdrawBtn");
+        withdrawBtn.addEventListener("click",function(){
+            const withdrawAmount=document.getElementById("withdrawAmount").value;
+            const withdrawAmountNumber=parseFloat(withdrawAmount);
+
+
+            const withdrawNumber=document.getElementById("withdrawNumber").innerText;
+            const pastWithdraw=parseFloat(withdrawNumber);
+
+            const totalWithdrawAmount= withdrawAmountNumber + pastWithdraw;
+
+            document.getElementById("withdrawNumber").innerText=totalWithdrawAmount;
+            document.getElementById("withdrawAmount").value="";
+            
+       
+            const previousDeposit=document.getElementById("withdrawNumber").innerText;
+            const convert=parseFloat(previousDeposit);
+            const balanceNumber=document.getElementById("balanceNumber").innerText;
+            const balanceNumberConvert=parseFloat(balanceNumber);
+
+            const totalBalance1= balanceNumberConvert - convert;
+            document.getElementById("balanceNumber").innerText=totalBalance1;
+        //Withdraw Add End
+    })
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
+</body>
+</html>
